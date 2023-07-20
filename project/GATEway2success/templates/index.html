@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    calendar
+{% endblock %}
+
+{% block main %}
+<h1></h1>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in cal %}
+            <tr>
+                {% for day in week %}
+                    {% if day != 0 %}
+                        {% set date = datetime(year, month, day).date() %}
+                        {% set color = date_colors.get(date) %}
+                        <td style="background-color: {{ color  }}">{{ day }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
