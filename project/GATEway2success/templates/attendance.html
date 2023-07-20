@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    attendance
+{% endblock %}
+
+{% block main %}
+
+<h1>Welcome</h1>
+<form action="/attendance" method="post">
+  <div class="mb-3">
+    <select class="form-select mx-auto w-auto" name="symbol">
+      <option disabled selected>SELECT</option>
+      <option value="checkin">Check-In</option>
+      <option value="checkout">Check-Out</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+{% endblock %}
