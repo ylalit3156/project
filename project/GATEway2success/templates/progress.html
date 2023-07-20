@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    Progress so far...
+{% endblock %}
+
+{% block main%}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-start">Date</th>
+            <th class="text-end">Topic</th>
+            <th class="text-end">Questions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for note in progress %}
+            <tr>
+                <td class="text-start">{{note["date"]}}</td>
+                <td class="text-end">{{note["topic"]}}</td>
+                <td class="text-end">{{note["questions"]}}</td>
+             </tr>
+         {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
